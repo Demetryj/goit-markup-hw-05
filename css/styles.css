@@ -80,6 +80,8 @@ body {
 }
 
 .link-studio {
+  position: relative;
+
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -87,6 +89,21 @@ body {
   text-decoration: none;
 
   color: #2196f3;
+}
+
+.link-studio::after {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  top: 46px;
+
+  display: block;
+  width: 100%;
+  height: 4px;
+
+  background: #2196f3;
+  border-radius: 2px;
 }
 
 .link-portfolio,
@@ -98,6 +115,10 @@ body {
   text-decoration: none;
 
   color: var(--primary-font-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-studio:hover,
@@ -144,6 +165,10 @@ body {
 
   color: var(--secondary-font-color);
   fill: var(--secondary-font-color);
+
+  transition-property: color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mail:hover,
@@ -226,6 +251,55 @@ body {
 
   border-radius: 4px;
   border-color: transparent;
+}
+
+/*--------------------- Модальне вікно---------------------- */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: end;
+  padding-top: 8px;
+  padding-right: 8px;
+
+  min-width: 528px;
+  min-height: 581px;
+
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.close-modal {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* Секція 2 */
@@ -428,6 +502,10 @@ body {
   padding: 12px;
   border-radius: 50%;
   fill: var(--icon-color);
+
+  transition-property: background-color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-item:not(:last-child) {
@@ -481,6 +559,10 @@ body {
   border-radius: 4px;
 
   fill: var(--icon-color);
+
+  transition-property: border-color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-item:not(:last-child) {
@@ -586,11 +668,15 @@ body {
 
   background: rgba(255, 255, 255, 0.1);
   fill: var(--wite-text-color);
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-link:hover,
 .footer-link:focus {
-  background: var(--accent-color);
+  background-color: var(--accent-color);
 }
 
 .footer-item:not(:last-child) {
@@ -611,6 +697,8 @@ body {
 /* Фон шапки наслідується з CSS правила щодо шапки першої сторнінки. */
 /* Логтип наслідує властивості з CSS правила щодо Логотипу першої сторнінки.*/
 .nav-portfolio {
+  position: relative;
+
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -618,6 +706,21 @@ body {
   text-decoration: none;
 
   color: #2196f3;
+}
+
+.nav-portfolio::after {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  top: 46px;
+
+  display: block;
+  width: 100%;
+  height: 4px;
+
+  background: #2196f3;
+  border-radius: 2px;
 }
 
 .nav-stdio,
@@ -629,6 +732,10 @@ body {
   text-decoration: none;
 
   color: var(--primary-font-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-stdio:hover,
@@ -688,6 +795,10 @@ body {
 
   border-radius: 4px;
   border-color: transparent;
+
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   cursor: pointer;
 }
@@ -781,6 +892,10 @@ body {
 .card-link {
   display: block;
   text-decoration: none;
+
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-link:hover,
